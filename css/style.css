@@ -1,0 +1,102 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover:not(.active) {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Active navigation item */
+.active a {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Skip to content */
+a[href="#main-content"]:focus {
+    display: block; 
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 2;
+}
+
+a[href="#main-content"] {
+    display: none;
+}
+
+/* Grid layout for main content */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling for div inside main (use as needed) */
+main div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #4CAF50;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Miscellaneous styles (add your own as needed) */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+p, ul, img, video {
+    margin-bottom: 20px;
+}
