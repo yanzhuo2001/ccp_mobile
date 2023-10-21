@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #006400;
     color: white;
     text-align: center;
     padding: 10px;
@@ -41,20 +41,37 @@ nav a:hover:not(.active) {
 
 /* Active navigation item */
 .active a {
-    background-color: #4CAF50;
+    background-color: #006400;
     color: white;
 }
 
 /* Skip to content */
+a[href="#main-content"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
+
 a[href="#main-content"]:focus {
-    display: block; 
-    position: static;
+    position: fixed;
     top: 5px;
     left: 5px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
     background: #000;
     color: #fff;
     padding: 8px;
-    z-index: 2;
+    z-index: 1000;
+    text-align: center;
 }
 
 
@@ -75,7 +92,7 @@ main div {
 }
 
 h2, h3 {
-    color: #4CAF50;
+    color: #006400;
 }
 
 img, video {
