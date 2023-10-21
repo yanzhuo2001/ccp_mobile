@@ -48,7 +48,7 @@ nav a:hover:not(.active) {
 /* Skip to content */
 a[href="#main-content"]:focus {
     display: block; 
-    position: absolute;
+    position: static;
     top: 5px;
     left: 5px;
     background: #000;
@@ -57,9 +57,6 @@ a[href="#main-content"]:focus {
     z-index: 2;
 }
 
-a[href="#main-content"] {
-    display: none;
-}
 
 /* Grid layout for main content */
 main {
