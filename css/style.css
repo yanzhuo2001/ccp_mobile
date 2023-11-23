@@ -3,7 +3,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    /* background: linear-gradient(135deg, #ece9e6, #ffffff); */
+    background: linear-gradient(to right, #03a3cb, #b6ecf6); /* 渐变色从浅蓝到深蓝 */
+}
+
+/* 默认隐藏 Skip to Content 链接 */
+a[href="#main-content"] {
+    position: absolute;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* 当元素获得焦点时显示 */
+a[href="#main-content"]:focus {
+    left: auto;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    top: 10px; /* 可以调整为适合您网站的位置 */
+    left: 10px; /* 同上 */
+    background-color: #fff; /* 背景色 */
+    color: #000; /* 文本颜色 */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 /* 导航栏样式 */
@@ -35,10 +63,19 @@ nav a:hover {
     color: #333;
 }
 
+h1 {
+    font-size: 100px;
+    color: yellow;
+}
+
+h2 {
+    font-size: 30px;
+    color: #006400;
+}
+
 /* 标题样式 */
 h1, h2 {
     text-align: center;
-    color: #006400;
 }
 
 /* 主要内容区域 */
@@ -65,6 +102,7 @@ main {
     padding: 10px;
     display: none;
     text-align: center;
+    color: yellow;
 }
 
 .petHeader {
