@@ -37,13 +37,13 @@
         <!-- Bacon Q Dog -->
         <div class="petContainer">
             <div class="petHeader">
-                <h2 onclick="showPetInfo('Bacon')">Bacon Q Dog</h2>
+                <button class="petName" onclick="togglePetInfo('Bacon')">Bacon Q Dog</button>
                 <div class="buttonContainer">
                     <button onclick="changeImage(-1, 'Bacon')">《</button>
                     <button onclick="changeImage(1, 'Bacon')">》</button>
                 </div>
             </div>
-            <div id="BaconInfo" class="petInfo"></div>
+            <div id="BaconInfo" class="petInfo">Bacon Q. Dog is a 9yr old labradoodle. He enjoys walks and playing with toys.</div>
             <div id="BaconGallery" class="imageGallery">
                 <img src="images/pet/Bacon/bacon.jpg" alt="Brown labradoodle wearing colorful lei">
             </div>
@@ -52,13 +52,13 @@
         <!-- Brul -->
         <div class="petContainer">
             <div class="petHeader">
-                <h2 onclick="showPetInfo('Brul')">Brul</h2>
+                <button class="petName" onclick="togglePetInfo('Brul')">Brul</button>
                 <div class="buttonContainer">
                     <button onclick="changeImage(-1, 'Brul')">《</button>
                     <button onclick="changeImage(1, 'Brul')">》</button>
                 </div>
             </div>
-            <div id="BrulInfo" class="petInfo"></div>
+            <div id="BrulInfo" class="petInfo">Brul is a 2yr old Maine coon cat. She enjoys watching outside from the window.</div>
             <div id="BrulGallery" class="imageGallery">
                 <img src="images/pet/Brul/Brul.jpg" alt="Brown fuzzy cat">
             </div>
@@ -67,13 +67,13 @@
         <!-- Hua Hua -->
         <div class="petContainer">
             <div class="petHeader">
-                <h2 onclick="showPetInfo('HuaHua')">Hua Hua</h2>
+                <button class="petName" onclick="togglePetInfo('HuaHua')">Hua Hua</button>
                 <div class="buttonContainer">
                     <button onclick="changeImage(-1, 'HuaHua')">《</button>
                     <button onclick="changeImage(1, 'HuaHua')">》</button>
                 </div>
             </div>
-            <div id="HuaHuaInfo" class="petInfo"></div>
+            <div id="HuaHuaInfo" class="petInfo">Huahua is a three-year-old kitten with gray and black hair. She is very fond and warm.</div>
             <div id="HuaHuaGallery" class="imageGallery">
                 <img src="images/pet/Hua_Hua/Hua_Hua_lying_on_the_ground.jpg" alt="Hua Hua lying on the ground">
             </div>
@@ -82,13 +82,13 @@
         <!-- Rocket -->
         <div class="petContainer">
             <div class="petHeader">
-                <h2 onclick="showPetInfo('Rocket')">Rocket</h2>
+                <button class="petName" onclick="togglePetInfo('Rocket')">Rocket</button>
                 <div class="buttonContainer">
                     <button onclick="changeImage(-1, 'Rocket')">《</button>
                     <button onclick="changeImage(1, 'Rocket')">》</button>
                 </div>
             </div>
-            <div id="RocketInfo" class="petInfo"></div>
+            <div id="RocketInfo" class="petInfo">Rocket is a 6-month pomeranian puppy, friendly and energetic.</div>
             <div id="RocketGallery" class="imageGallery">
                 <img src="images/pet/Rocket/rocket_primary.jpg" alt="Cute, small and yellow pomeranian">
             </div>
@@ -97,13 +97,13 @@
         <!-- Smoothie -->
         <div class="petContainer">
             <div class="petHeader">
-                <h2 onclick="showPetInfo('Smoothie')">Smoothie</h2>
+                <button class="petName" onclick="togglePetInfo('Smoothie')">Smoothie</button>
                 <div class="buttonContainer">
                     <button onclick="changeImage(-1, 'Smoothie')">《</button>
                     <button onclick="changeImage(1, 'Smoothie')">》</button>
                 </div>
             </div>
-            <div id="SmoothieInfo" class="petInfo"></div>
+            <div id="SmoothieInfo" class="petInfo">Smoothie, known as the "world\'s most photogenic cat", has emerald eyes and golden fur.</div>
             <div id="SmoothieGallery" class="imageGallery">
                 <img src="images/pet/Smoothie/Smoothie_staring.jpg" alt="Long-hair beautiful, orange tabby cat">
             </div>
@@ -112,13 +112,13 @@
         <!-- Sprout -->
         <div class="petContainer">
             <div class="petHeader">
-                <h2 onclick="showPetInfo('Sprout')">Sprout</h2>
+                <button class="petName" onclick="togglePetInfo('Sprout')">Sprout</button>
                 <div class="buttonContainer">
                     <button onclick="changeImage(-1, 'Sprout')">《</button>
                     <button onclick="changeImage(1, 'Sprout')">》</button>
                 </div>
             </div>
-            <div id="SproutInfo" class="petInfo"></div>
+            <div id="SproutInfo" class="petInfo">Sprout, a shy kitten, gradually became an affectionate companion.</div>
             <div id="SproutGallery" class="imageGallery">
                 <img src="images/pet/Sprout/Sprout_Kitten.jpg" alt="Sprout as a kitten">
             </div>
@@ -134,7 +134,6 @@
                     { url: 'images/pet/Bacon/bacon_graduation.JPG', type: 'image', alt: 'Labradoodle in graduation outfit' },
                     { url: 'images/pet/Bacon/bacon_halloween.JPG', type: 'image', alt: 'Labradoodle in Halloween costume' }
                 ],
-                info: 'Bacon Q. Dog is a 9yr old labradoodle. He enjoys walks and playing with toys.'
             },
             'Brul': {
                 media: [
@@ -143,7 +142,6 @@
                     { url: 'images/pet/Brul/Brul2.jpg', type: 'image', alt: 'Maine coon cat relaxing' },
                     { url: 'images/pet/Brul/Brul3.jpg', type: 'image', alt: 'Maine coon cat in a playful pose' }
                 ],
-                info: 'Brul is a 2yr old Maine coon cat. She enjoys watching outside from the window.'
             },
             'HuaHua': {
                 media: [
@@ -152,7 +150,6 @@
                     { url: 'images/pet/Hua_Hua/Hua_Hua_coquetry.mp4', type: 'video' },
                     { url: 'images/pet/Hua_Hua/Hua_Hua_curling_up.mp4', type: 'video' }
                 ],
-                info: 'Huahua is a three-year-old kitten with gray and black hair. She is very fond and warm.'
             },
             'Rocket': {
                 media: [
@@ -161,7 +158,6 @@
                     { url: 'images/pet/Rocket/rocket_wants_to_go_out.jpg', type: 'image', alt: 'Pomeranian wanting to go out' },
                     { url: 'images/pet/Rocket/rocket_childhood.jpg', type: 'image', alt: 'Pomeranian during childhood' }
                 ],
-                info: 'Rocket is a 6-month pomeranian puppy, friendly and energetic.'
             },
             'Smoothie': {
                 media: [
@@ -170,7 +166,6 @@
                     { url: 'images/pet/Smoothie/Smoothie_lying.jpg', type: 'image', alt: 'Tabby cat lying down' },
                     { url: 'images/pet/Smoothie/Smoothie_curious.jpg', type: 'image', alt: 'Curious tabby cat' }
                 ],
-                info: 'Smoothie, known as the "world\'s most photogenic cat", has emerald eyes and golden fur.'
             },
             'Sprout': {
                 media: [
@@ -179,9 +174,7 @@
                     { url: 'images/pet/Sprout/Sprout_toy.jpg', type: 'image', alt: 'Sprout playing with a toy' },
                     { url: 'images/pet/Sprout/Sprout_withnaer.jpg', type: 'image', alt: 'Sprout with a friend' }
                 ],
-                info: 'Sprout, a shy kitten, gradually became an affectionate companion.'
             }
-            // 其他宠物的数据可以在此添加
         };
         
 
@@ -195,13 +188,21 @@
         
             var newMedia = pets[petName].media[nextIndex];
             if (newMedia.type === 'image') {
-                gallery.innerHTML = `<img src="${newMedia.url}" alt="${newMedia.alt}">`;
+                gallery.innerHTML = `<img src="${newMedia.url}" alt="${newMedia.alt}" style="animation: none;">`; // 移除动画
+                setTimeout(() => {
+                    gallery.innerHTML = `<img src="${newMedia.url}" alt="${newMedia.alt}">`; // 重新应用动画
+                }, 10); // 延迟以确保浏览器检测到DOM的变化
             } else if (newMedia.type === 'video') {
                 gallery.innerHTML = `<video controls><source src="${newMedia.url}" type="video/mp4"></video>`;
             }
         }
-              
 
+        function togglePetInfo(petName) {
+            var infoDiv = document.getElementById(petName + 'Info');
+            var isDisplayed = infoDiv.style.display === 'block';
+            infoDiv.style.display = isDisplayed ? 'none' : 'block';
+        }        
+              
         function showPetInfo(petName) {
             var infoDiv = document.getElementById(petName + 'Info');
             infoDiv.innerHTML = pets[petName].info;

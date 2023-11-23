@@ -17,6 +17,18 @@ a[href="#main-content"] {
     clip: rect(0, 0, 0, 0);
 }
 
+/* 图片淡入和淡出的动画 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.imageGallery img {
+    animation-name: fadeIn;
+    animation-duration: 1s; /* 淡入效果的持续时间 */
+    animation-fill-mode: both; /* 在动画之前和之后应用动画的样式 */
+}
+
 /* 当元素获得焦点时显示 */
 a[href="#main-content"]:focus {
     left: auto;
@@ -102,7 +114,7 @@ main {
     padding: 10px;
     display: none;
     text-align: center;
-    color: yellow;
+    color: rgb(60, 0, 255);
 }
 
 .petHeader {
@@ -156,6 +168,39 @@ main {
 button:hover {
     background-color: #004d00;
 }
+
+.petContainer {
+    border: 2px solid #6dd5ed; /* 选择一个亮丽的颜色 */
+    border-radius: 15px; /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
+    margin: 20px;
+    padding: 20px;
+    background-color: white; /* 背景色 */
+    transition: box-shadow 0.3s, transform 0.3s; /* 平滑阴影和变形变化效果 */
+    transform: scale(1); /* 初始比例 */
+}
+
+.petContainer:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 鼠标悬停时的阴影更深 */
+    transform: scale(1.05); /* 放大到原来的1.05倍 */
+}
+
+.petName {
+    background: none;
+    border: none;
+    color: yellowgreen;
+    font: inherit;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.petName:hover,
+.petName:focus {
+    text-decoration: underline; /* 鼠标悬停或聚焦时显示下划线 */
+}
+
 
 /* 响应式布局 */
 @media (max-width: 768px) {
