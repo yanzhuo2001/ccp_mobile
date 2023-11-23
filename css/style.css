@@ -1,25 +1,20 @@
-/* General styles */
+/* 基础重置和字体样式 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
 }
 
-header {
-    background-color: #006400;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
+/* 导航栏样式 */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    display: flex;
+    justify-content: center;
 }
 
 nav li {
@@ -32,85 +27,109 @@ nav a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-nav a:hover:not(.active) {
+nav a:hover {
     background-color: #ddd;
     color: #333;
 }
 
-/* Active navigation item */
-.active a {
-    background-color: #006400;
-    color: white;
-}
-
-/* Skip to content */
-a[href="#main-content"] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    white-space: nowrap;
-}
-
-a[href="#main-content"]:focus {
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-    background: #000;
-    color: #fff;
-    padding: 8px;
-    z-index: 1000;
+/* 标题样式 */
+h1, h2 {
     text-align: center;
-}
-
-
-/* Grid layout for main content */
-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Styling for div inside main (use as needed) */
-main div {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-h2, h3 {
     color: #006400;
 }
 
-img, video {
-    max-width: 100%;
-    height: auto;
+/* 主要内容区域 */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* 宠物容器样式 */
+.petContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px; /* 设置固定宽度 */
+    margin: 15px; /* 适当的外边距 */
+}
+
+/* 宠物信息样式 */
+.petInfo {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    text-align: center;
+}
+
+.petHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonContainer button {
+    margin: 0 5px;
+}
+
+/* 宠物画廊样式 */
+.imageGallery {
+    position: relative; /* 设置相对定位 */
+    text-align: center;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+.imageGallery img, .imageGallery video {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
-/* Miscellaneous styles (add your own as needed) */
-ul {
-    list-style-type: none;
-    padding: 0;
+/* 按钮样式 */
+.imageGallery button {
+    position: absolute; /* 设置绝对定位 */
+    top: 50%; /* 将按钮垂直居中 */
+    transform: translateY(-50%); /* 确保精确居中 */
+    background-color: #006400;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-li {
-    margin-bottom: 5px;
+.imageGallery button:first-of-type {
+    left: 10px; /* 左侧按钮位置 */
 }
 
-p, ul, img, video {
-    margin-bottom: 20px;
+.imageGallery button:last-of-type {
+    right: 10px; /* 右侧按钮位置 */
+}
+
+
+button:hover {
+    background-color: #004d00;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    main {
+        justify-content: center;
+    }
+
+    .petContainer {
+        width: 100%; /* 小屏幕下全宽度显示 */
+    }
 }
