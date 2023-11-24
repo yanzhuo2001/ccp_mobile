@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     /* background: linear-gradient(135deg, #ece9e6, #ffffff); */
-    background: linear-gradient(to right, #03a3cb, #b6ecf6); /* 渐变色从浅蓝到深蓝 */
 }
 
 /* 默认隐藏 Skip to Content 链接 */
@@ -54,8 +53,9 @@ nav ul {
     overflow: hidden;
     background-image: url('../images/background/dalishi.jpg');
     display: flex;
-    
     justify-content: center;
+    justify-content: center;
+    height: 70px;
 }
 
 nav li {
@@ -80,19 +80,19 @@ nav a:hover {
 
 h1 {
     font-family: 'Dancing Script', cursive;
-    padding-top: 10px;
     font-size: 100px;
     color: yellow;
     background-image: url('../images/background/hua.jpg');
+    text-align: center;
+    margin-top: 0; /* 移除上边距 */
+    margin-bottom: 0; /* 移除下边距 */
+    padding-top: 10px;
+    height: 130px;
 }
 
 h2 {
     font-size: 30px;
     color: #006400;
-}
-
-/* 标题样式 */
-h1, h2 {
     text-align: center;
 }
 

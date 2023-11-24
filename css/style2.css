@@ -1,0 +1,169 @@
+/* 基础重置和字体样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+}
+
+/* 默认隐藏 Skip to Content 链接 */
+a[href="#main-content"] {
+    position: absolute;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* 当元素获得焦点时显示 */
+a[href="#main-content"]:focus {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* 导航栏样式 */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('../images/background/dalishi.jpg');
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    height: 70px;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 30px;
+    display: block;
+    color: blue;
+    text-align: center;
+    padding: 14px 26px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #484747;
+    color: white;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    color: yellow;
+    background-image: url('../images/background/hua.jpg');
+    text-align: center;
+    margin-top: 0; /* 移除上边距 */
+    margin-bottom: 0; /* 移除下边距 */
+    padding-top: 10px;
+    height: 130px;
+}
+
+/* 主要内容区域 */
+main {
+    padding: 20px;
+}
+
+/* 主内容区域样式 */
+#main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* 食谱容器样式 */
+.recipe-container {
+    width: 48%; /* 每个容器占据行宽的大约一半 */
+    margin-bottom: 20px; /* 添加一些间隔 */
+    border: 5px dashed #4CAF50;
+    border-radius: 5px;
+}
+
+/* 图片样式 */
+.recipe-container img {
+    height: 300px; /* 保持图片的原始宽高比 */
+    width: auto; /* 让图片宽度适应容器 */
+    border-radius: 8px; /* 如有需要，可保留圆角 */
+    display: block;
+}
+
+.recipe-container h2, .recipe-container h3 {
+    color: #333;
+}
+
+/* 食谱分类筛选按钮样式 */
+#recipe-filter button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#recipe-filter button:hover {
+    background-color: #367c39;
+}
+
+/* 图片模态窗口样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
