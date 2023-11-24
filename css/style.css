@@ -52,8 +52,9 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-image: url('../images/background/dalishi.jpg');
     display: flex;
+    
     justify-content: center;
 }
 
@@ -62,22 +63,27 @@ nav li {
 }
 
 nav a {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 30px;
     display: block;
-    color: white;
+    color: blue;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 26px;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: #ddd;
-    color: #333;
+    background-color: #484747;
+    color: white;
 }
 
 h1 {
+    font-family: 'Dancing Script', cursive;
+    padding-top: 10px;
     font-size: 100px;
     color: yellow;
+    background-image: url('../images/background/hua.jpg');
 }
 
 h2 {
@@ -96,6 +102,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+    background-image: url('../images/background/caodi.jpg');
 }
 
 /* 宠物容器样式 */
@@ -105,16 +112,20 @@ main {
     align-items: center;
     width: 400px; /* 设置固定宽度 */
     margin: 15px; /* 适当的外边距 */
+    background-image: url('../images/background/shitou.jpg');
+    z-index: 1;
 }
 
 /* 宠物信息样式 */
 .petInfo {
     margin-top: 10px;
-    border: 1px solid #ccc;
+    border: 5px dashed #ccc;
     padding: 10px;
     display: none;
     text-align: center;
-    color: rgb(60, 0, 255);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
 }
 
 .petHeader {
@@ -124,8 +135,19 @@ main {
 }
 
 .buttonContainer button {
-    margin: 0 5px;
+    background: none; /* 移除背景色 */
+    border: none; /* 移除边框 */
+    padding: 0; /* 移除填充 */
+    cursor: pointer; /* 保持指针样式 */
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
+.buttonContainer button img {
+    width: 50px; /* 根据需要调整宽度 */
+    height: auto; /* 保持图片比例 */
+}
+
 
 /* 宠物画廊样式 */
 .imageGallery {
@@ -164,13 +186,12 @@ main {
     right: 10px; /* 右侧按钮位置 */
 }
 
-
-button:hover {
-    background-color: #004d00;
+.buttonContainer:hover {
+    transform: scale(1.2); /* 放大到原来的1.05倍 */
 }
 
 .petContainer {
-    border: 2px solid #6dd5ed; /* 选择一个亮丽的颜色 */
+    border: 5px dashed rgb(247, 15, 11); /* 选择一个亮丽的颜色 */
     border-radius: 15px; /* 圆角边框 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
     margin: 20px;
@@ -194,9 +215,14 @@ button:hover {
     font-size: 30px;
     padding: 0;
     margin: 0;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600; /* 稍微加粗 */
 }
 
-.petName:hover,
+.petName:hover {
+    text-decoration: underline;
+    transform: scale(1.05); /* 放大到原来的1.05倍 */
+}
 .petName:focus {
     text-decoration: underline; /* 鼠标悬停或聚焦时显示下划线 */
 }
