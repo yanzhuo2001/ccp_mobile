@@ -242,3 +242,10 @@ main {
         width: 100%; /* 小屏幕下全宽度显示 */
     }
 }
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
