@@ -241,10 +241,3 @@ main {
 body.fixed-padding {
     padding-top: 0px;
 }
-
-/* 页脚样式 */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f2f2f2;
-}
