@@ -92,38 +92,53 @@ main {
 
 /* 食谱容器样式 */
 .recipe-container {
-    width: 48%; /* 每个容器占据行宽的大约一半 */
+    width: 48%; /* 或您之前设置的宽度 */
     margin-bottom: 20px; /* 添加一些间隔 */
     border: 5px dashed #4CAF50;
     border-radius: 5px;
+    text-align: center; /* 添加此行以居中文本 */
 }
 
-/* 图片样式 */
 .recipe-container img {
     height: 300px; /* 保持图片的原始宽高比 */
     width: auto; /* 让图片宽度适应容器 */
     border-radius: 8px; /* 如有需要，可保留圆角 */
     display: block;
+    margin: auto; /* 添加此行以居中图片 */
 }
 
 .recipe-container h2, .recipe-container h3 {
     color: #333;
 }
 
-/* 食谱分类筛选按钮样式 */
+/* 筛选器容器样式 */
+#recipe-filter {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between; /* 使按钮均匀分布 */
+    padding: 10px; /* 如需要，可调整内边距 */
+}
+
+/* 筛选器按钮样式 */
 #recipe-filter button {
     background-color: #4CAF50;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* 添加 transform 到过渡效果 */
+
+    font-size: 30px; /* 增加字体大小 */
+    font-family: 'Caveat', sans-serif;/* 可以选择一个您喜欢的字体 */
+    font-weight: bold; /* 加粗字体 */
 }
 
+/* 鼠标悬停时的按钮样式 */
 #recipe-filter button:hover {
     background-color: #367c39;
+    transform: scale(1.1); /* 鼠标悬停时放大 */
 }
 
 /* 图片模态窗口样式 */
