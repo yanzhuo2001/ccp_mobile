@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    background: rgb(169, 169, 169);
 }
 
 /* 默认隐藏 Skip to Content 链接 */
@@ -14,6 +14,41 @@ a[href="#main-content"] {
     height: 1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+}
+
+p {
+    font-family: "Kalam", serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: large;
+}
+
+span {
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: large;
+    color: white;
+    background-color: black;
+}
+
+.recipe-container h2 {
+    font-family: "Sriracha", serif;
+    color: yellow;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.recipe-container span {
+    display: inline-block; /* 或者只是 inline，取决于您的布局需求 */
+    margin-top: 3px; /* 减少与上方元素的间隔 */
+    margin-bottom: 10px; /* 增加下边距 */
+}
+
+.collapsible, .toggle-button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
 }
 
 /* 当元素获得焦点时显示 */
@@ -107,13 +142,11 @@ main {
     margin: auto; /* 添加此行以居中图片 */
 }
 
-.recipe-container h2, .recipe-container h3 {
-    color: #333;
-}
-
 /* 筛选器容器样式 */
 #recipe-filter {
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 0px;
     margin-left: 20px;
     margin-right: 20px;
     justify-content: space-between; /* 使按钮均匀分布 */
@@ -176,9 +209,42 @@ main {
     color: #ccc;
 }
 
+.collapsible {
+    display: none;
+}
+
+.toggle-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #367c39;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 96%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 如果您有一个页眉或其他固定内容，您可能需要调整此值 */
+body.fixed-padding {
+    padding-top: 0px;
+}
+
 /* 页脚样式 */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     background-color: #f2f2f2;
 }

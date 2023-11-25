@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Caveat&family=Kalam&family=Sriracha&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/recipe/DoubleChocolate/double_chocolate_cookies.png">
     <link rel="stylesheet" type="text/css" href="css/style2.css">
     <title>Recipes</title> 
@@ -36,8 +36,8 @@
             <span class="category">Category: Dessert</span>
             <img src="images/recipe/DoubleChocolate/double_chocolate_cookies.png" alt="Double Chocolate Cookies" onclick="enlargeImage(this.src)">
             <p>My daughter learned to make these cookies at a baking camp at Zingermanns and has tweaked the recipe to fit the taste buds of her siblings. They are extremely sugary so the salt helps to balance it. Note, these cookies are best eaten very quickly.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-1')">Recipe Ingredients</button>
+            <ul id="ingredients-1" class="collapsible" style="display: none;">
                 <li>1/2 cup unsalted butter, softened</li>
                 <li>3/4 cup granulated sugar</li>
                 <li>3/4 cup packed light or dark brown sugar</li>
@@ -50,8 +50,8 @@
                 <li>1/2 teaspoon salt</li>
                 <li>1 cup semi-sweet chocolate chunks (unmelted)</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-1')">Recipe Steps</button>
+            <ol id="steps-1" class="collapsible" style="display: none;">
                 <li>Cream together the butter, granulated sugar, and brown sugar in a mixing bowl.</li>
                 <li>Beat in the egg and vanilla extract.</li>
                 <li>Stir in the melted chocolate.</li>
@@ -70,8 +70,8 @@
             <span class="category">Category: Main Dish</span>
             <img src="images/recipe/MoroccanChickenTagine/moroccan_chicken_tagine.jpg" alt="Moroccan Chicken Tagine" onclick="enlargeImage(this.src)">
             <p>Moroccan Chicken Tagine is a classic North African dish that is known for its rich flavor and tender chicken cooked with spices, olives, and preserved lemons. The dish is traditionally cooked in a tagine pot but can be made in a regular pot as well.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-2')">Recipe Ingredients</button>
+            <ul id="ingredients-2" class="collapsible" style="display: none;">
                 <li>4 chicken thighs, bone-in and skin-on</li>
                 <li>2 teaspoons paprika</li>
                 <li>1 teaspoon ground cumin</li>
@@ -87,8 +87,8 @@
                 <li>Salt and pepper, to taste</li>
                 <li>Fresh cilantro, for garnish</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-2')">Recipe Steps</button>
+            <ol id="steps-2" class="collapsible" style="display: none;">
                 <li>Season chicken thighs with paprika, cumin, cinnamon, ginger, salt, and pepper.</li>
                 <li>In a tagine or large pot, heat olive oil over medium heat and brown the chicken on both sides. Remove and set aside.</li>
                 <li>Sauté onions and garlic in the same pot until softened.</li>
@@ -106,8 +106,8 @@
             <span class="category">Category: Main Dish</span>
             <img src="images/recipe/Curry/Japanese_Chicken_Curry.jpg" alt="Japanese Chicken Curry" onclick="enlargeImage(this.src)">
             <p>Unlike Indian or Thai curry, Japanese curry is more savory than spicy. It's an exemplary comfort food and one of the most-loved home-cooked dishes in Japan.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-3')">Recipe Ingredients</button>
+            <ul id="ingredients-3" class="collapsible" style="display: none;">
                 <li>2 skinless, boneless chicken breasts</li>
                 <li>1 tablespoon olive oil</li>
                 <li>Salt and ground black pepper to taste</li>
@@ -120,8 +120,8 @@
                 <li>1 medium onion, chopped</li>
                 <li>2 cups jasmine rice</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-3')">Recipe Steps</button>
+            <ol id="steps-3" class="collapsible" style="display: none;">
                 <li>Season chicken with salt and pepper, cook in a skillet with olive oil over medium heat until no longer pink.</li>
                 <li>Prepare curry sauce mix with water in the microwave, then pour over cooked chicken.</li>
                 <li>Add peas, potatoes, mushrooms, carrots, and onion to the skillet. Simmer until vegetables are tender.</li>
@@ -138,8 +138,8 @@
             <span class="category">Category: Staple Food</span>
             <img src="images/recipe/Jiaozi/jiaozi.jpeg" alt="Chinese Jiaozi" onclick="enlargeImage(this.src)">
             <p>Chinese dumplings (Jiaozi) are a popular dish made from dough and filled with savory mixtures, often enjoyed during Chinese New Year.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-4')">Recipe Ingredients</button>
+            <ul id="ingredients-4" class="collapsible" style="display: none;">
                 <li>3 cups all-purpose flour</li>
                 <li>1 1/4 cups water</li>
                 <li>1 pound ground pork</li>
@@ -150,8 +150,8 @@
                 <li>2 cloves garlic, minced</li>
                 <li>Salt and pepper to taste</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-4')">Recipe Steps</button>
+            <ol id="steps-4" class="collapsible" style="display: none;">
                 <li>Mix flour with water to form a dough. Rest for 30 minutes.</li>
                 <li>Combine pork, cabbage, soy sauce, sesame oil, ginger, garlic, salt, and pepper.</li>
                 <li>Roll out dough and cut into circles. Place filling in the center of each circle.</li>
@@ -169,8 +169,8 @@
             <span class="category">Category: Main Dish</span>
             <img src="images/recipe/Carbonara/carbonara.jpg" alt="Italian Carbonara" onclick="enlargeImage(this.src)">
             <p>Carbonara is a classic Italian pasta dish featuring a rich, creamy sauce made with egg, cheese, and pancetta.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-5')">Recipe Ingredients</button>
+            <ul id="ingredients-5" class="collapsible" style="display: none;">
                 <li>400g spaghetti</li>
                 <li>150g pancetta or bacon, diced</li>
                 <li>2 large eggs</li>
@@ -178,8 +178,8 @@
                 <li>1 teaspoon black pepper</li>
                 <li>Salt to taste</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-5')">Recipe Steps</button>
+            <ol id="steps-5" class="collapsible" style="display: none;">
                 <li>Cook spaghetti in salted water until al dente.</li>
                 <li>Cook pancetta in a pan until crisp.</li>
                 <li>Whisk together eggs, cheese, and black pepper.</li>
@@ -196,8 +196,8 @@
             <span class="category">Category: Dessert</span>
             <img src="images/recipe/LemonTart/lemon_tart.jpg" alt="Lemon Tart" onclick="enlargeImage(this.src)">
             <p>Lemon Tart, a delightful French dessert, features a crisp pastry shell filled with a tangy lemon filling.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-6')">Recipe Ingredients</button>
+            <ul id="ingredients-6" class="collapsible" style="display: none;">
                 <li>1 1/2 cups all-purpose flour</li>
                 <li>1/2 cup unsalted butter</li>
                 <li>1/2 cup powdered sugar</li>
@@ -206,8 +206,8 @@
                 <li>1 tablespoon lemon zest</li>
                 <li>1/2 cup fresh lemon juice</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-6')">Recipe Steps</button>
+            <ol id="steps-6" class="collapsible" style="display: none;">
                 <li>Prepare the tart crust by combining flour, butter, and powdered sugar. Press into a tart pan and bake.</li>
                 <li>Whisk together eggs, granulated sugar, lemon zest, and lemon juice for the filling.</li>
                 <li>Pour filling over the baked crust and bake until set.</li>
@@ -224,8 +224,8 @@
             <span class="category">Category: Main Dish</span>
             <img src="images/recipe/BeefStroganoff/beef_stroganoff.jpg" alt="Beef Stroganoff" onclick="enlargeImage(this.src)">
             <p>Beef Stroganoff is a classic Russian dish featuring sautéed beef in a creamy mushroom and sour cream sauce.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-7')">Recipe Ingredients</button>
+            <ul id="ingredients-7" class="collapsible" style="display: none;">
                 <li>500g beef sirloin, cut into strips</li>
                 <li>1 large onion, finely chopped</li>
                 <li>2 cloves garlic, minced</li>
@@ -236,8 +236,8 @@
                 <li>2 tablespoons olive oil</li>
                 <li>Salt and freshly ground black pepper to taste</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-7')">Recipe Steps</button>
+            <ol id="steps-7" class="collapsible" style="display: none;">
                 <li>Brown the beef strips in olive oil over medium heat and set aside.</li>
                 <li>In the same pan, sauté onion and garlic, then add mushrooms.</li>
                 <li>Pour in beef broth and mustard, simmer for a few minutes.</li>
@@ -254,8 +254,8 @@
             <span class="category">Category: Snacks</span>
             <img src="images/recipe/Bruschetta/bruschetta.jpg" alt="Bruschetta" onclick="enlargeImage(this.src)">
             <p>Bruschetta is a delightful Italian appetizer featuring grilled bread topped with a fresh tomato and basil mixture.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-8')">Recipe Ingredients</button>
+            <ul id="ingredients-8" class="collapsible" style="display: none;">
                 <li>4 large slices of rustic or sourdough bread</li>
                 <li>2 cloves garlic, halved</li>
                 <li>2 large ripe tomatoes, finely diced</li>
@@ -263,8 +263,8 @@
                 <li>Extra-virgin olive oil for drizzling</li>
                 <li>Salt and freshly ground black pepper to taste</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-8')">Recipe Steps</button>
+            <ol id="steps-8" class="collapsible" style="display: none;">
                 <li>Grill bread slices until toasted and golden.</li>
                 <li>While still warm, rub with garlic.</li>
                 <li>Combine diced tomatoes and basil, season with salt and pepper, and drizzle with olive oil.</li>
@@ -281,8 +281,8 @@
             <span class="category">Category: Snacks</span>
             <img src="images/recipe/Falafel/falafel.jpg" alt="Falafel" onclick="enlargeImage(this.src)">
             <p>Falafel is a beloved Middle Eastern dish made of spiced chickpeas, deep-fried to perfection.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-9')">Recipe Ingredients</button>
+            <ul id="ingredients-9" class="collapsible" style="display: none;">
                 <li>2 cups dried chickpeas, soaked overnight</li>
                 <li>1 small onion, finely chopped</li>
                 <li>3 cloves of garlic, minced</li>
@@ -292,8 +292,8 @@
                 <li>Salt and pepper to taste</li>
                 <li>Vegetable oil for frying</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-9')">Recipe Steps</button>
+            <ol id="steps-9" class="collapsible" style="display: none;">
                 <li>Process chickpeas, onion, garlic, parsley, cumin, coriander, salt, and pepper until well combined.</li>
                 <li>Shape mixture into small balls or patties.</li>
                 <li>Fry in hot oil until golden and crispy.</li>
@@ -309,16 +309,16 @@
             <span class="category">Category: Staple Food</span>
             <img src="images/recipe/Onigiri/onigiri.jpg" alt="Onigiri" onclick="enlargeImage(this.src)">
             <p>Onigiri, or Japanese rice balls, are a simple yet delicious snack or light meal, typically wrapped in nori.</p>
-            <h3>Recipe Ingredients</h3>
-            <ul>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-10')">Recipe Ingredients</button>
+            <ul id="ingredients-10" class="collapsible" style="display: none;">
                 <li>2 cups sushi rice</li>
                 <li>2 1/2 cups water</li>
                 <li>Pinch of salt</li>
                 <li>Nori seaweed sheets, cut into strips</li>
                 <li>Fillings: umeboshi (pickled plum), cooked salmon, tuna mayonnaise, etc.</li>
             </ul>
-            <h3>Recipe Steps</h3>
-            <ol>
+            <button class="toggle-button" onclick="toggleVisibility('steps-10')">Recipe Steps</button>
+            <ol id="steps-10" class="collapsible" style="display: none;">
                 <li>Cook sushi rice with water and let it cool slightly.</li>
                 <li>Wet your hands, take a half cup of rice, and form a well in the center.</li>
                 <li>Place a small amount of filling into the well, then cover with more rice.</li>
@@ -327,6 +327,187 @@
             </ol>
         </div>
 
+        <!-- Apple Pie -->
+        <div class="recipe-container">
+            <h2>Apple Pie</h2>
+            <span>Origin: United States</span>
+            <span>Source: Family Recipe</span>
+            <span class="category">Category: Dessert</span>
+            <img src="images/recipe/ApplePie/apple_pie.jpg" alt="Apple Pie" onclick="enlargeImage(this.src)">
+            <p>A traditional American dessert, apple pie is a classic favorite, especially when served warm with a scoop of vanilla ice cream.</p>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-11')">Recipe Ingredients</button>
+            <ul id="ingredients-11" class="collapsible" style="display: none;">
+                <li>2 1/2 cups all-purpose flour</li>
+                <li>1 cup unsalted butter, chilled and diced</li>
+                <li>1/2 teaspoon salt</li>
+                <li>1/2 cup ice water</li>
+                <li>6 cups thinly sliced apples</li>
+                <li>3/4 cup sugar</li>
+                <li>2 teaspoons ground cinnamon</li>
+                <li>1/4 teaspoon ground nutmeg</li>
+            </ul>
+            <button class="toggle-button" onclick="toggleVisibility('steps-11')">Recipe Steps</button>
+            <ol id="steps-11" class="collapsible" style="display: none;">
+                <li>Mix flour, butter, and salt to create a crumbly dough. Add ice water gradually.</li>
+                <li>Roll out dough and line a pie dish. Refrigerate.</li>
+                <li>Mix apples, sugar, cinnamon, and nutmeg. Pour into the crust.</li>
+                <li>Top with another layer of dough. Cut slits for steam to escape.</li>
+                <li>Bake at 375°F (190°C) for 50 minutes or until golden brown.</li>
+            </ol>
+        </div>
+
+        <!-- Tiramisu -->
+        <div class="recipe-container">
+            <h2>Tiramisu</h2>
+            <span>Origin: Italy</span>
+            <span>Source: Family Recipe</span>
+            <span class="category">Category: Dessert</span>
+            <img src="images/recipe/Tiramisu/tiramisu.jpg" alt="Tiramisu" onclick="enlargeImage(this.src)">
+            <p>Tiramisu, an elegant and rich Italian dessert, layers coffee-soaked ladyfingers with a mascarpone cheese mixture and cocoa powder.</p>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-12')">Recipe Ingredients</button>
+            <ul id="ingredients-12" class="collapsible" style="display: none;">
+                <li>6 egg yolks</li>
+                <li>3/4 cup sugar</li>
+                <li>1 cup mascarpone cheese</li>
+                <li>1 1/2 cups strong espresso, cooled</li>
+                <li>2 tablespoons dark rum or brandy</li>
+                <li>24 ladyfingers</li>
+                <li>Unsweetened cocoa powder, for dusting</li>
+            </ul>
+            <button class="toggle-button" onclick="toggleVisibility('steps-12')">Recipe Steps</button>
+            <ol id="steps-12" class="collapsible" style="display: none;">
+                <li>Whisk egg yolks and sugar until thick. Add mascarpone cheese and blend.</li>
+                <li>Mix espresso and rum. Dip ladyfingers briefly in this mixture.</li>
+                <li>Layer ladyfingers in a dish, then spread the mascarpone mixture on top.</li>
+                <li>Repeat layers and finish with a mascarpone layer.</li>
+                <li>Dust with cocoa powder and chill for at least 4 hours before serving.</li>
+            </ol>
+        </div>
+
+        <!-- Shawarma Wrap -->
+        <div class="recipe-container">
+            <h2>Shawarma Wrap</h2>
+            <span>Origin: Middle East</span>
+            <span>Source: Traditional Recipe</span>
+            <span class="category">Category: Staple Food</span>
+            <img src="images/recipe/ShawarmaWrap/shawarma_wrap.jpg" alt="Shawarma Wrap" onclick="enlargeImage(this.src)">
+            <p>Shawarma Wrap is a popular Middle Eastern street food, featuring thinly sliced meat, fresh vegetables, and a tangy sauce wrapped in a soft flatbread.</p>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-13')">Recipe Ingredients</button>
+            <ul id="ingredients-13" class="collapsible" style="display: none;">
+                <li>500g thinly sliced chicken or lamb</li>
+                <li>2 tablespoons shawarma spice mix</li>
+                <li>2 tablespoons olive oil</li>
+                <li>4 flatbreads or pita bread</li>
+                <li>1 cup shredded lettuce</li>
+                <li>1 tomato, sliced</li>
+                <li>1 cucumber, sliced</li>
+                <li>1/4 cup tahini sauce</li>
+                <li>Salt and pepper to taste</li>
+                <li>Lemon juice to taste</li>
+            </ul>
+            <button class="toggle-button" onclick="toggleVisibility('steps-13')">Recipe Steps</button>
+            <ol id="steps-13" class="collapsible" style="display: none;">
+                <li>Marinate the meat with shawarma spice mix, olive oil, salt, pepper, and lemon juice. Let it rest for at least an hour.</li>
+                <li>Grill or pan-fry the meat until fully cooked and slightly crispy.</li>
+                <li>Warm the flatbreads. Spread tahini sauce on each flatbread.</li>
+                <li>Add the cooked meat, lettuce, tomato, and cucumber slices on top of the flatbread.</li>
+                <li>Roll the flatbread tightly to wrap the filling. Serve immediately.</li>
+            </ol>
+        </div>
+
+
+        <!-- Seafood Paella -->
+        <div class="recipe-container">
+            <h2>Seafood Paella</h2>
+            <span>Origin: Spain</span>
+            <span>Source: Traditional Recipe</span>
+            <span class="category">Category: Staple Food</span>
+            <img src="images/recipe/SeafoodPaella/seafood_paella.jpg" alt="Seafood Paella" onclick="enlargeImage(this.src)">
+            <p>Seafood Paella is a vibrant Spanish dish packed with seafood and bold flavors, traditionally cooked in a large paella pan.</p>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-14')">Recipe Ingredients</button>
+            <ul id="ingredients-14" class="collapsible" style="display: none;">
+                <li>2 cups paella rice</li>
+                <li>4 cups fish stock</li>
+                <li>1 cup white wine</li>
+                <li>1 onion, chopped</li>
+                <li>2 cloves garlic, minced</li>
+                <li>1 bell pepper, sliced</li>
+                <li>1 cup frozen peas</li>
+                <li>200g shrimp, peeled and deveined</li>
+                <li>200g mussels, cleaned</li>
+                <li>200g clams, cleaned</li>
+                <li>1 teaspoon paprika</li>
+                <li>Pinch of saffron</li>
+                <li>Olive oil</li>
+                <li>Salt and pepper to taste</li>
+                <li>Lemon wedges, for serving</li>
+            </ul>
+            <button class="toggle-button" onclick="toggleVisibility('steps-14')">Recipe Steps</button>
+            <ol id="steps-14" class="collapsible" style="display: none;">
+                <li>Sauté onion, garlic, and bell pepper in olive oil until soft.</li>
+                <li>Add rice, paprika, and saffron. Stir to coat the rice.</li>
+                <li>Add white wine and let it evaporate. Add fish stock and simmer.</li>
+                <li>Add shrimp, mussels, clams, and peas. Cook until seafood is done.</li>
+                <li>Remove from heat, cover, and let sit for a few minutes.</li>
+                <li>Serve with lemon wedges.</li>
+            </ol>
+        </div>
+
+        <!-- Quesadilla -->
+        <div class="recipe-container">
+            <h2>Quesadilla</h2>
+            <span>Origin: Mexico</span>
+            <span>Source: Traditional Recipe</span>
+            <span class="category">Category: Snacks</span>
+            <img src="images/recipe/Quesadilla/quesadilla.jpg" alt="Quesadilla" onclick="enlargeImage(this.src)">
+            <p>Quesadilla is a Mexican snack made of tortillas filled with cheese and sometimes meat, vegetables, or spices, then grilled.</p>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-15')">Recipe Ingredients</button>
+            <ul id="ingredients-15" class="collapsible" style="display: none;">
+                <li>4 large flour tortillas</li>
+                <li>2 cups shredded cheddar or Mexican blend cheese</li>
+                <li>1 cup cooked and shredded chicken (optional)</li>
+                <li>1/2 cup diced bell peppers</li>
+                <li>1/2 cup diced onions</li>
+                <li>1/2 cup chopped tomatoes</li>
+                <li>1/2 cup canned black beans, rinsed and drained</li>
+                <li>Olive oil or butter for cooking</li>
+                <li>Sour cream and salsa for serving</li>
+            </ul>
+            <button class="toggle-button" onclick="toggleVisibility('steps-15')">Recipe Steps</button>
+            <ol id="steps-15" class="collapsible" style="display: none;">
+                <li>Heat a skillet and lightly oil it. Place a tortilla in the skillet.</li>
+                <li>Sprinkle half the tortilla with cheese, chicken, bell peppers, onions, tomatoes, and black beans.</li>
+                <li>Fold the other half over the filling and cook until golden brown. Flip and cook the other side.</li>
+                <li>Repeat with remaining tortillas and filling.</li>
+                <li>Cut into wedges and serve with sour cream and salsa.</li>
+            </ol>
+        </div>
+
+        <!-- Greek Yogurt with Fruit -->
+        <div class="recipe-container">
+            <h2>Greek Yogurt with Fruit</h2>
+            <span>Origin: Greece</span>
+            <span>Source: Modern Recipe</span>
+            <span class="category">Category: Snacks</span>
+            <img src="images/recipe/GreekYogurt/greek_yogurt.jpg" alt="Greek Yogurt with Fruit" onclick="enlargeImage(this.src)">
+            <p>Greek Yogurt with Fruit is a healthy and refreshing snack, combining creamy yogurt with fresh fruits and a hint of honey.</p>
+            <button class="toggle-button" onclick="toggleVisibility('ingredients-16')">Recipe Ingredients</button>
+            <ul id="ingredients-16" class="collapsible" style="display: none;">
+                <li>2 cups Greek yogurt</li>
+                <li>1 cup mixed berries (strawberries, blueberries, raspberries)</li>
+                <li>2 tablespoons honey</li>
+                <li>1/4 cup granola</li>
+                <li>Mint leaves for garnish</li>
+            </ul>
+            <button class="toggle-button" onclick="toggleVisibility('steps-16')">Recipe Steps</button>
+            <ol id="steps-16" class="collapsible" style="display: none;">
+                <li>Spoon Greek yogurt into bowls.</li>
+                <li>Top with mixed berries.</li>
+                <li>Drizzle honey over the yogurt and berries.</li>
+                <li>Sprinkle granola on top for added crunch.</li>
+                <li>Garnish with mint leaves and serve.</li>
+            </ol>
+        </div>
         
         <!-- 模态窗口结构 -->
         <div id="imageModal" class="modal">
@@ -366,6 +547,35 @@
             }
         }
     </script>
+
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        window.onscroll = function() {fixFilter()};
+
+        var filter = document.getElementById("recipe-filter");
+        var fixedOffset = filter.offsetTop; // 获取筛选器的初始位置
+
+        function fixFilter() {
+            if (window.pageYOffset >= fixedOffset) {
+                filter.classList.add("fixed");
+                document.body.classList.add("fixed-padding");
+            } else {
+            filter.classList.remove("fixed");
+            document.body.classList.remove("fixed-padding");
+            }
+        }   
+    </script>
+    
     
     <footer>
         <p>&copy; 2023 Delicious Recipes</p>
