@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Caveat&family=Kalam&family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Caveat&family=Kalam&family=Sriracha&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/travel/YellowStone/yellowstone_cauldron.jpg">
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style3.css">
@@ -30,6 +30,8 @@
     <main id="main-content">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjm60pr6oZPprWhpBztAh2AospWKsQXnc&callback=initMap&language=en" async defer></script>
         <script>
+            var markers = {}; // 存储所有标记
+            var currentSelectedMarker = null; // 用于追踪当前选中的标记
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 5,
@@ -480,48 +482,105 @@
                     "description": "Zion National Park is known for its steep red cliffs, canyons, and Emerald Pools. The park's hiking trails, including The Narrows and Angels Landing, offer both beauty and challenge."
                 }
             ]
-            
-                parks.forEach(function(park) {
-                    var marker = new google.maps.Marker({
-                        position: {lat: park.latitude, lng: park.longitude},
-                        map: map
-                    });
-            
-                    marker.addListener('click', function() {
-                        var parkNameElement = document.getElementById('park-name');
-                        parkNameElement.innerHTML = '<a href="' + park.wiki_url + '" target="_blank">' + park.name + ' National Park' + '</a>';
-                        document.getElementById('park-description').innerHTML = park.description;;
-                        loadParkImages(park.name);
-                    });                    
-                });
-            }
-            
-            google.maps.event.addDomListener(window, 'load', initMap); 
+            var parksRowContainer = document.getElementById('parks-list'); // 确保这个ID与您的HTML中的ID匹配
 
-            function loadParkImages(parkName) {
-                var imagePath = 'images/travel/' + parkName + '/'; // 图片存储路径
-                var imageCount = 9; // 图片数量
-                var currentIndex = 1; // 当前图片索引，从1开始
+            parks.forEach(function(park, index) { // 获取循环中的索引
+                // 创建地图上的标记
+                var marker = new google.maps.Marker({
+                    position: {lat: park.latitude, lng: park.longitude},
+                    map: map,
+                    icon: createMarkerIcon('red') // 设置初始颜色为红色
+                });
+                markers[park.name] = marker;
             
-                // 加载第一张图片
-                var imgElement = document.getElementById('park-image');
-                imgElement.src = imagePath + currentIndex + '.jpg';
+                // 添加点击事件
+                marker.addListener('click', function() {
+                    showParkDetails(park, map);
+                });
             
-                // 轮播逻辑
-                setInterval(function() {
-                    currentIndex = currentIndex % imageCount + 1; // 更新索引
-                    imgElement.src = imagePath + currentIndex + '.jpg'; // 更新图片
-                }, 3000); // 每3秒切换一张图片
-            }                       
+                // 创建并添加国家公园名称到顶部列表
+                var parkNameDiv = document.createElement('div');
+                parkNameDiv.textContent = park.name;
+                parkNameDiv.onclick = function() { showParkDetails(park, map); };
+                parksRowContainer.appendChild(parkNameDiv);
+            
+                // 如果索引是10的倍数（除了第一个），则强制换行
+                if (index > 0 && index % 10 === 0) {
+                    parksRowContainer.appendChild(document.createElement('br'));
+                }
+            });
+            
+        }
+        
+        google.maps.event.addDomListener(window, 'load', initMap);
+        
+        function createMarkerIcon(color) {
+            return {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: color,
+                fillOpacity: 0.8,
+                scale: 8,
+                strokeColor: 'white',
+                strokeWeight: 2
+            };
+        }
+        
+        function showParkDetails(park, map) {
+            // 隐藏初始信息
+            var initialMessageElement = document.getElementById('initial-message');
+            if (initialMessageElement) {
+                initialMessageElement.style.display = 'none';
+            }
+                    
+            // 如果有已选中的标记，则重置其颜色
+            if (currentSelectedMarker) {
+                currentSelectedMarker.setIcon(createMarkerIcon('red'));
+            }
+        
+            // 更改当前标记的颜色
+            map.setCenter({lat: park.latitude, lng: park.longitude});
+            var marker = markers[park.name];
+            marker.setIcon(createMarkerIcon('blue'));
+            currentSelectedMarker = marker;
+        
+            // 更新右侧面板内容
+            var parkNameElement = document.getElementById('park-name');
+            parkNameElement.innerHTML = '<a href="' + park.wiki_url + '" target="_blank">' + park.name + ' National Park' + '</a>';
+            document.getElementById('park-description').innerHTML = park.description + '<br>' + 'Below is a series of photos about ' + park.name + ' National Park:';
+            loadParkImages(park.name);
+        }
+        
+        function loadParkImages(parkName) {
+            var imagePath = 'images/travel/' + parkName + '/'; // 图片存储路径
+            var imageCount = 9; // 图片数量
+            var currentIndex = 1; // 当前图片索引，从1开始
+        
+            // 加载第一张图片
+            var imgElement = document.getElementById('park-image');
+            imgElement.style.display = 'block'; // 确保图片可见
+            imgElement.src = imagePath + currentIndex + '.jpg';
+        
+            // 轮播逻辑
+            setInterval(function() {
+                currentIndex = currentIndex % imageCount + 1; // 更新索引
+                imgElement.src = imagePath + currentIndex + '.jpg'; // 更新图片
+            }, 3000); // 每3秒切换一张图片
+        }   
                        
         </script>
+
+        <div id="parks-list">
+            <!-- 国家公园名称将在这里动态生成 -->
+        </div>
+
         <div id="container">
             <div id="map"></div>
             <div id="park-info">
+                <div id="initial-message">Click on the names of the National Parks above or the location markers on the left to start your own vacation travel<br>! ! ! ! !</div>
                 <h2 id="park-name"></h2>
                 <p id="park-description"></p>
                 <div id="park-images">
-                    <img id="park-image" src="" alt="Park Image" />
+                    <img id="park-image" src="" alt="Park Image" style="display: none;" />
                 </div>                
             </div>
         </div>
