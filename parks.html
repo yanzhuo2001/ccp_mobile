@@ -491,7 +491,7 @@
                         var parkNameElement = document.getElementById('park-name');
                         parkNameElement.innerHTML = '<a href="' + park.wiki_url + '" target="_blank">' + park.name + ' National Park' + '</a>';
                         document.getElementById('park-description').innerHTML = park.description;;
-                        loadParkImages('Acadia');
+                        loadParkImages(park.name);
                     });                    
                 });
             }
