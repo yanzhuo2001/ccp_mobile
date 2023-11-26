@@ -37,12 +37,13 @@ a[href="#main-content"]:focus {
     clip: auto;
     top: 10px; /* 可以调整为适合您网站的位置 */
     left: 10px; /* 同上 */
-    background-color: #fff; /* 背景色 */
-    color: #000; /* 文本颜色 */
+    background-color: #000;
+    color: #fff;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
     z-index: 1000;
+    font-size: large;
 }
 
 /* 导航栏样式 */

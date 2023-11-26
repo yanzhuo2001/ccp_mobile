@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Caveat&family=Kalam&family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/travel/YellowStone/yellowstone_cauldron.jpg">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
+    <title>Travel</title>
+</head>
+<body>
+    	<!-- Header is a sematic tag page that aids readability -->
+	<header>
+		<!-- Nav is a sematic tag page that aids accessibility -->
+		<nav>
+			<ul>
+				<!-- Since I am on the index file I added class = action to the link to index. -->
+				<!-- For this homework leave the class on index for all three pages. -->
+				<li><a href = "index.html">Cute Pets</a></li>
+				<li><a href = "recipes.html">Yummy Foods</a></li>
+				<li class="active"><a href = "travel.html">Beautiful Places</a></li>
+			</ul>
+		</nav>
+		<!-- The h1 is a semantic tag that aids accessibility -->
+		<h1>Beautiful Places</h1>
+        <a href = "#main-content">Skip to Main Content</a>    
+	</header>
+
+    <main id="main-content">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjm60pr6oZPprWhpBztAh2AospWKsQXnc&callback=initMap&language=en" async defer></script>
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 5,
+                    center: {lat: 39.8283, lng: -98.5795} // 美国地图的中心点
+                });
+            
+                // 假设 parks 是包含所有国家公园信息的数组
+                var parks = [
+                {
+                    "name": "Acadia",
+                    "latitude": 44.3385559,
+                    "longitude": -68.2733346,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Acadia_National_Park",
+                    "description": "Acadia National Park is known for its stunning Atlantic coastline, rugged terrain, and diverse habitats. The park's highlight, Cadillac Mountain, offers breathtaking sunrises. Visitors can explore forested trails, rocky beaches, and enjoy abundant wildlife."
+                },
+                {
+                    "name": "American Samoa",
+                    "latitude": -14.2579491,
+                    "longitude": -170.6859778,
+                    "wiki_url": "https://en.wikipedia.org/wiki/American_Samoa_National_Park",
+                    "description": "American Samoa National Park showcases pristine tropical landscapes with rainforests, beaches, and coral reefs. The park offers a unique blend of culture and nature, providing opportunities for snorkeling, hiking, and learning about Samoan culture."
+                },
+                {
+                    "name": "Arches",
+                    "latitude": 38.733081,
+                    "longitude": -109.5925139,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Arches_National_Park",
+                    "description": "Arches National Park is famous for its natural sandstone arches, with over 2,000 arches dotting the landscape. The park's unique geological formations, including the iconic Delicate Arch, offer spectacular hiking and photography opportunities."
+                },
+                {
+                    "name": "Badlands",
+                    "latitude": 43.8553804,
+                    "longitude": -102.3396912,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Badlands_National_Park",
+                    "description": "Badlands National Park is characterized by striking geological formations, including rugged spires and eroded buttes. The park's mixed-grass prairie is home to diverse wildlife, offering scenic drives and trails for exploring its dramatic landscapes."
+                },
+                {
+                    "name": "Big Bend",
+                    "latitude": 29.2498194,
+                    "longitude": -103.2501636,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Big_Bend_National_Park",
+                    "description": "Big Bend National Park, bordering the Rio Grande, features diverse ecosystems from desert to mountains. It's renowned for its hiking trails, birdwatching, and scenic vistas, offering a remote wilderness experience."
+                },
+                {
+                    "name": "Biscayne",
+                    "latitude": 25.4824229,
+                    "longitude": -80.20831030000001,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Biscayne_National_Park",
+                    "description": "Biscayne National Park encompasses coral reefs, islands, and mangrove forests. It's a paradise for water activities like snorkeling, boating, and fishing, showcasing vibrant marine life and shipwrecks."
+                },
+                {
+                    "name": "Black Canyon of the Gunnison",
+                    "latitude": 38.5753936,
+                    "longitude": -107.7415961,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Black_Canyon_of_the_Gunnison_National_Park",
+                    "description": "This park features dramatic, steep-walled canyons carved by the Gunnison River. Known for its spectacular views, rock climbing, and stargazing, it offers a unique and rugged landscape."
+                },
+                {
+                    "name": "Bryce Canyon",
+                    "latitude": 37.5930377,
+                    "longitude": -112.1870895,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Bryce_Canyon_National_Park",
+                    "description": "Bryce Canyon is renowned for its hoodoos, spire-shaped rock formations. The park offers stunning viewpoints, especially at sunrise and sunset, and has trails winding through its unique geological structures."
+                },
+                {
+                    "name": "Canyonlands",
+                    "latitude": 38.2135733,
+                    "longitude": -109.9025345,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Canyonlands_National_Park",
+                    "description": "Canyonlands National Park is known for its dramatic desert landscape carved by the Colorado River. It features mesas, buttes, and deep canyons, offering breathtaking views and challenging hikes."
+                },
+                {
+                    "name": "Capitol Reef",
+                    "latitude": 38.0877312,
+                    "longitude": -111.1354983,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Capitol_Reef_National_Park",
+                    "description": "Capitol Reef National Park is celebrated for its colorful cliffs, narrow canyons, and the Waterpocket Fold, a unique geological feature. The park's orchards, historic sites, and scenic drives add to its allure."
+                },
+                {
+                    "name": "Carlsbad Caverns",
+                    "latitude": 32.137045,
+                    "longitude": -104.5437529,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Carlsbad_Caverns_National_Park",
+                    "description": "Carlsbad Caverns National Park boasts over 100 caves, with stunning formations. The Big Room, a natural limestone chamber, is a highlight. Visitors also enjoy the nightly bat flights in summer."
+                },
+                {
+                    "name": "Channel Islands",
+                    "latitude": 34.0149999,
+                    "longitude": -119.7516345,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Channel_Islands_National_Park",
+                    "description": "Channel Islands National Park encompasses five remarkable islands and their surrounding ocean environment, preserving a wealth of natural and cultural resources. Isolation over thousands of years has created unique animals, plants, and archeological resources found nowhere else on Earth and has helped preserve a place where visitors can experience coastal southern California as it once was."
+                },
+                {
+                    "name": "Congaree",
+                    "latitude": 33.7918719,
+                    "longitude": -80.7490486,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Congaree_National_Park",
+                    "description": "Congaree National Park preserves the largest tract of old growth bottomland hardwood forest left in the United States. The park is an international biosphere reserve known for its rich biodiversity. Visitors can explore the park via boardwalks, hiking trails, and canoeing or kayaking on the Congaree River."
+                },
+                {
+                    "name": "Crater Lake",
+                    "latitude": 42.9294762,
+                    "longitude": -122.1279394,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Crater_Lake_National_Park",
+                    "description": "Crater Lake National Park, known for its stunningly blue lake, is the result of a collapsed volcano. The park offers scenic drives and spectacular viewpoints around the lake, as well as opportunities for hiking, boating, and winter sports."
+                },
+                {
+                    "name": "Cuyahoga Valley",
+                    "latitude": 41.2808248,
+                    "longitude": -81.56781199999999,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Cuyahoga_Valley_National_Park",
+                    "description": "Cuyahoga Valley National Park near Cleveland and Akron, Ohio, preserves rural landscapes along the Cuyahoga River. Key features include the scenic railroad, hiking trails, waterfalls, and historic buildings. The park's diverse habitats provide a haven for wildlife and a peaceful retreat for visitors."
+                },
+                {
+                    "name": "Death Valley",
+                    "latitude": 36.5322649,
+                    "longitude": -116.9325408,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Death_Valley_National_Park",
+                    "description": "Death Valley National Park, known for being one of the hottest places on Earth, offers a variety of landscapes from salt flats to sand dunes, badlands, valleys, and mountains. Visitors enjoy sightseeing at landmarks like Badwater Basin and Artist's Palette."
+                },
+                {
+                    "name": "Denali",
+                    "latitude": 63.1148002,
+                    "longitude": -151.1926058,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Denali_National_Park",
+                    "description": "Denali National Park is home to North America's highest peak, Denali. The park offers spectacular landscapes and wildlife viewing, with opportunities for hiking, camping, and mountaineering in a pristine wilderness setting."
+                },
+                {
+                    "name": "Dry Tortugas",
+                    "latitude": 24.628477,
+                    "longitude": -82.87318739999999,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Dry_Tortugas_National_Park",
+                    "description": "Dry Tortugas National Park, located in the Gulf of Mexico, is known for its crystal-clear waters, coral reefs, and Fort Jefferson. The park is a prime spot for snorkeling, diving, and exploring its rich marine life and bird population."
+                },
+                {
+                    "name": "Everglades",
+                    "latitude": 25.2866155,
+                    "longitude": -80.89865089999999,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Everglades_National_Park",
+                    "description": "Everglades National Park protects an unparalleled landscape that provides important habitat for numerous rare and endangered species like the manatee, American crocodile, and the elusive Florida panther. An international treasure as well - a World Heritage Site, International Biosphere Reserve, and Wetland of International Importance - significant because it is the largest subtropical wilderness of its kind in North America."
+                },
+                {
+                    "name": "Gates of the Arctic",
+                    "latitude": 67.6854972,
+                    "longitude": -153.3241121,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Gates_of_the_Arctic_National_Park",
+                    "description": "Gates of the Arctic National Park and Preserve lies entirely north of the Arctic Circle. Its six wild rivers and vast wilderness offer unparalleled opportunities for wilderness travel, whether backpacking, floating, or base-camping. With no roads or trails, visitors must be experienced in backcountry skills and self-reliant."
+                },
+                {
+                    "name": "Gateway Arch",
+                    "latitude": 38.6248848,
+                    "longitude": -90.1858982,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Gateway_Arch_National_Park",
+                    "description": "Gateway Arch National Park, formerly known as the Jefferson National Expansion Memorial, is a memorial in St. Louis, Missouri, dedicated to the American people's pioneering spirit. The park features the Gateway Arch, a symbol of the city's role as the 'Gateway to the West.'"
+                },
+                {
+                    "name": "Glacier Bay",
+                    "latitude": 58.66580729999999,
+                    "longitude": -136.9002147,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Glacier_Bay_National_Park",
+                    "description": "Glacier Bay National Park and Preserve commands a glacier-crowned, maritime wilderness that encircles ice-capped mountains spilling into tidewater glaciers, a rugged coastline home to a diversity of marine and terrestrial wildlife, and a rainforest rich in biodiversity."
+                },
+                {
+                    "name": "Glacier",
+                    "latitude": 48.7596128,
+                    "longitude": -113.7870225,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Glacier_National_Park",
+                    "description": "Glacier National Park, known as the 'Crown of the Continent,' encompasses over a million acres of forests, alpine meadows, and lakes. Its diverse habitats are home to over 70 species of mammals and over 260 species of birds. The spectacular glaciated landscape is a hiker's paradise."
+                },
+                {
+                    "name": "Grand Canyon",
+                    "latitude": 36.2678855,
+                    "longitude": -112.3535253,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Grand_Canyon_National_Park",
+                    "description": "Grand Canyon National Park is home to the immense Grand Canyon, a mile-deep gorge carved by the Colorado River over thousands of years. Known for its overwhelming size and its intricate and colorful landscape, the park offers scenic vistas, hiking, rafting, and camping."
+                },
+                {
+                    "name": "Grand Teton",
+                    "latitude": 43.7904282,
+                    "longitude": -110.6817627,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Grand_Teton_National_Park",
+                    "description": "Grand Teton National Park is known for its stunning mountain landscapes and pristine lakes. Hiking, camping, and wildlife viewing are popular activities. The park's diverse ecosystems offer a glimpse into a world of untouched natural beauty."
+                },
+                {
+                    "name": "Great Basin",
+                    "latitude": 38.9299798,
+                    "longitude": -114.2633787,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Great_Basin_National_Park",
+                    "description": "Great Basin National Park is known for its ancient bristlecone pines, dark night skies, abundant wildlife, and the Lehman Caves system. The park's varied landscape ranges from desert to alpine environments, offering a range of outdoor activities."
+                },
+                {
+                    "name": "Great Sand Dunes",
+                    "latitude": 37.7935263,
+                    "longitude": -105.5930539,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Great_Sand_Dunes_National_Park",
+                    "description": "Great Sand Dunes National Park is home to the tallest sand dunes in North America. The park's diverse landscape includes dunes, mountains, and forests, offering activities like sand sledding and stargazing."
+                },
+                {
+                    "name": "Great Smoky Mountains",
+                    "latitude": 35.6130503,
+                    "longitude": -83.55315370000001,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Great_Smoky_Mountains_National_Park",
+                    "description": "The Great Smoky Mountains National Park, known for its rich biodiversity, is a hiker's paradise with ancient mountains and a vast network of trails. The park's fog-covered peaks and historic homesteads add to its mystique."
+                },
+                {
+                    "name": "Guadalupe Mountains",
+                    "latitude": 31.9233303,
+                    "longitude": -104.8663109,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Guadalupe_Mountains_National_Park",
+                    "description": "Guadalupe Mountains National Park features the highest peak in Texas and extensive hiking trails. Its diverse ecosystems range from desert to dense woodland, offering spectacular fall foliage."
+                },
+                {
+                    "name": "Haleakala",
+                    "latitude": 20.7203826,
+                    "longitude": -156.1551524,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Haleakala_National_Park",
+                    "description": "Haleakala National Park is centered around a massive volcano. The park's landscapes range from summit deserts to tropical forests, known for breathtaking sunrises and unique wildlife."
+                },
+                {
+                    "name": "Hawai'i Volcanoes",
+                    "latitude": 19.4290543,
+                    "longitude": -155.2568892,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Hawai%CA%BBi_Volcanoes_National_Park",
+                    "description": "Hawai'i Volcanoes National Park is famous for its active volcanoes, Kilauea and Mauna Loa. The park offers a unique experience with volcanic landscapes, lush rainforests, and petroglyphs."
+                },
+                {
+                    "name": "Hot Springs",
+                    "latitude": 34.5269095,
+                    "longitude": -93.0690934,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Hot_Springs_National_Park",
+                    "description": "Hot Springs National Park, known for its historic bathhouses and thermal springs, offers a unique blend of natural and cultural experiences. The park's scenic drives and hiking trails complement its spa heritage."
+                },
+                {
+                    "name": "Indiana Dunes",
+                    "latitude": 41.6532678,
+                    "longitude": -87.0524338,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Indiana_Dunes_National_Park",
+                    "description": "Indiana Dunes National Park offers over 15 miles of Lake Michigan shoreline with sandy beaches, dunes, wetlands, and forests. The park's diverse ecosystems support a wide array of wildlife."
+                },
+                {
+                    "name": "Isle Royale",
+                    "latitude": 47.9958654,
+                    "longitude": -88.9092899,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Isle_Royale_National_Park",
+                    "description": "Isle Royale National Park is a remote island wilderness in Lake Superior, offering solitude and adventure. The park is known for its rugged scenery, historic lighthouses, and wolf and moose populations."
+                },
+                {
+                    "name": "Joshua Tree",
+                    "latitude": 33.873415,
+                    "longitude": -115.9009923,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Joshua_Tree_National_Park",
+                    "description": "Joshua Tree National Park is famous for its otherworldly landscapes, featuring Joshua trees and rugged rock formations. The park's clear night skies make it a popular spot for stargazing and photography."
+                },
+                {
+                    "name": "Katmai",
+                    "latitude": 58.5861984,
+                    "longitude": -154.9697748,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Katmai_National_Park",
+                    "description": "Katmai National Park is best known for its brown bears and the Valley of Ten Thousand Smokes. The park offers unique wildlife viewing, fishing, and exploration of volcanic landscapes."
+                },
+                {
+                    "name": "Kenai Fjords",
+                    "latitude": 59.84867449999999,
+                    "longitude": -150.1878803,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Kenai_Fjords_National_Park",
+                    "description": "Kenai Fjords National Park is characterized by its glaciers, fjords, and the Harding Icefield. The park's coastal waters are rich in marine life, making it a prime spot for wildlife viewing and kayaking."
+                },
+                {
+                    "name": "Kings Canyon",
+                    "latitude": 36.8878548,
+                    "longitude": -118.5551477,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Kings_Canyon_National_Park",
+                    "description": "Kings Canyon National Park, with its deep valleys and towering sequoia trees, offers a dramatic landscape. The park's backcountry provides a true wilderness experience, with scenic drives and hiking trails."
+                },
+                {
+                    "name": "Kobuk Valley",
+                    "latitude": 67.35751069999999,
+                    "longitude": -159.213676,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Kobuk_Valley_National_Park",
+                    "description": "Kobuk Valley National Park is known for its massive sand dunes and caribou migration. The park's remote and untouched wilderness offers a unique Arctic experience."
+                },
+                {
+                    "name": "Lake Clark",
+                    "latitude": 60.6241855,
+                    "longitude": -153.3058417,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Lake_Clark_National_Park",
+                    "description": "Lake Clark National Park features stunning scenery with turquoise lakes, active volcanoes, and diverse wildlife. It's a haven for fishing, hiking, and exploring pristine Alaskan wilderness."
+                },
+                {
+                    "name": "Lassen Volcanic",
+                    "latitude": 40.49766,
+                    "longitude": -121.4206552,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Lassen_Volcanic_National_Park",
+                    "description": "Lassen Volcanic National Park is known for its volcanic activity and geothermal features. The park offers spectacular mountain scenery, clear alpine lakes, and a range of hiking trails."
+                },
+                {
+                    "name": "Mammoth Cave",
+                    "latitude": 37.181531,
+                    "longitude": -86.15052730000001,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Mammoth_Cave_National_Park",
+                    "description": "Mammoth Cave National Park houses the world's longest cave system. The park's extensive network of caves, rich history, and forested trails offer a unique underground adventure."
+                },
+                {
+                    "name": "Mesa Verde",
+                    "latitude": 37.2308729,
+                    "longitude": -108.4618335,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Mesa_Verde_National_Park",
+                    "description": "Mesa Verde National Park is celebrated for its well-preserved Ancestral Puebloan cliff dwellings. The park provides a glimpse into ancient cultures with its archaeological sites and panoramic vistas."
+                },
+                {
+                    "name": "Mount Rainier",
+                    "latitude": 46.8799663,
+                    "longitude": -121.7269094,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Mount_Rainier_National_Park",
+                    "description": "Mount Rainier National Park is dominated by Mount Rainier, an iconic active volcano. The park's old-growth forests, wildflower meadows, and glaciers make it a paradise for hikers and climbers."
+                },
+                {
+                    "name": "New River Gorge",
+                    "latitude": 37.8707083,
+                    "longitude": -81.0531025,
+                    "wiki_url": "https://en.wikipedia.org/wiki/New_River_Gorge_National_Park",
+                    "description": "New River Gorge is renowned for its deep canyon and the New River, one of the oldest rivers in North America. Popular for whitewater rafting, hiking, and stunning views, it's a haven for outdoor enthusiasts."
+                },
+                {
+                    "name": "North Cascades",
+                    "latitude": 48.7718174,
+                    "longitude": -121.2984648,
+                    "wiki_url": "https://en.wikipedia.org/wiki/North_Cascades_National_Park",
+                    "description": "North Cascades National Park is characterized by alpine landscape, glaciers, and coniferous forests. It offers rugged wilderness for hiking, camping, and mountaineering, with breathtaking vistas."
+                },
+                {
+                    "name": "Olympic",
+                    "latitude": 47.8021067,
+                    "longitude": -123.6043524,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Olympic_National_Park",
+                    "description": "Olympic National Park is diverse, with its Pacific coastline, rainforest, and mountain peaks. It provides unique ecosystems to explore, from tide pools to ancient forests and alpine meadows."
+                },
+                {
+                    "name": "Petrified Forest",
+                    "latitude": 35.0036935,
+                    "longitude": -109.7889229,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Petrified_Forest_National_Park",
+                    "description": "Petrified Forest National Park is famous for its fossilized trees that date back millions of years. The park's colorful landscape, ancient petroglyphs, and portions of the Painted Desert make it a fascinating visit."
+                },
+                {
+                    "name": "Pinnacles",
+                    "latitude": 36.4905655,
+                    "longitude": -121.1824925,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Pinnacles_National_Park",
+                    "description": "Pinnacles National Park, known for its volcanic rock formations, offers unique landscapes of spires and caves. It's a prime spot for rock climbing, bird watching, especially for California condors, and spring wildflowers."
+                },
+                {
+                    "name": "Redwood",
+                    "latitude": 41.4017156,
+                    "longitude": -124.041711,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Redwood_National_Park",
+                    "description": "Redwood National Park is home to the tallest trees on Earth, the ancient redwoods. The park also features prairies, rivers, and coastline, offering scenic drives and trails amidst the towering forest."
+                },
+                {
+                    "name": "Rocky Mountain",
+                    "latitude": 40.3427932,
+                    "longitude": -105.6836389,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Rocky_Mountain_National_Park",
+                    "description": "Rocky Mountain National Park boasts majestic mountain views, diverse wildlife, and alpine lakes. Known for the Trail Ridge Road and hiking trails, it offers adventures from scenic drives to challenging climbs."
+                },
+                {
+                    "name": "Saguaro",
+                    "latitude": 32.2967359,
+                    "longitude": -111.166615,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Saguaro_National_Park",
+                    "description": "Saguaro National Park, named for its giant saguaro cacti, is a symbol of the American West. The park, divided into two districts, offers stunning desert landscapes, hiking trails, and magnificent sunsets."
+                },
+                {
+                    "name": "Sequoia",
+                    "latitude": 36.4863668,
+                    "longitude": -118.5657516,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Sequoia_National_Park",
+                    "description": "Sequoia National Park is famous for its gigantic sequoia trees, including the General Sherman Tree, one of the largest trees on Earth. The park's mountains, caves, and diverse wildlife add to its splendor."
+                },
+                {
+                    "name": "Shenandoah",
+                    "latitude": 38.4754706,
+                    "longitude": -78.4534573,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Shenandoah_National_Park",
+                    "description": "Shenandoah National Park is known for its rolling hills, waterfalls, and the Skyline Drive. It's a popular destination for hiking, with over 500 miles of trails, including a portion of the Appalachian Trail."
+                },
+                {
+                    "name": "Theodore Roosevelt",
+                    "latitude": 46.978965,
+                    "longitude": -103.5387091,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Theodore_Roosevelt_National_Park",
+                    "description": "Theodore Roosevelt National Park is a tribute to the 26th President's conservation efforts. It features a rugged landscape with badlands, grasslands, and wildlife. The park is great for scenic drives and spotting bison."
+                },
+                {
+                    "name": "Virgin Islands",
+                    "latitude": 18.3435164,
+                    "longitude": -64.7501256,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Virgin_Islands_National_Park",
+                    "description": "Virgin Islands National Park covers much of St. John Island and offers stunning tropical scenery with beautiful beaches, coral reefs, and hiking trails. It's a perfect spot for snorkeling, hiking, and historical exploration."
+                },
+                {
+                    "name": "Voyageurs",
+                    "latitude": 48.4711276,
+                    "longitude": -92.8458393,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Voyageurs_National_Park",
+                    "description": "Voyageurs National Park is a water-based park known for its lakes, islands, and waterways. Ideal for boating, fishing, and canoeing, it also offers beautiful night skies for stargazing."
+                },
+                {
+                    "name": "White Sands",
+                    "latitude": 32.7872403,
+                    "longitude": -106.3256816,
+                    "wiki_url": "https://en.wikipedia.org/wiki/White_Sands_National_Park",
+                    "description": "White Sands National Park features vast dunes of gypsum sand, creating a surreal white landscape. It offers unique hiking, sledding on the dunes, and stunning sunsets over the white sand."
+                },
+                {
+                    "name": "Wind Cave",
+                    "latitude": 43.57243880000001,
+                    "longitude": -103.4415644,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Wind_Cave_National_Park",
+                    "description": "Wind Cave National Park is known for one of the world's longest and most complex caves. Above ground, it features mixed-grass prairie and wildlife. The cave tours highlight unique formations like boxwork."
+                },
+                {
+                    "name": "Wrangell–St. Elias",
+                    "latitude": 61.7104448,
+                    "longitude": -142.9856804,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Wrangell%E2%80%93St._Elias_National_Park",
+                    "description": "Wrangell–St. Elias, America's largest national park, offers massive glaciers and towering peaks. It's a wilderness paradise for mountaineering, hiking, and witnessing the raw beauty of nature."
+                },
+                {
+                    "name": "Yellowstone",
+                    "latitude": 44.427963,
+                    "longitude": -110.588455,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Yellowstone_National_Park",
+                    "description": "Yellowstone, the first national park in the world, is famed for its geysers, hot springs, and diverse wildlife. It's home to the iconic Old Faithful and the Grand Prismatic Spring."
+                },
+                {
+                    "name": "Yosemite",
+                    "latitude": 37.8651011,
+                    "longitude": -119.5383294,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Yosemite_National_Park",
+                    "description": "Yosemite National Park is celebrated for its granite cliffs, waterfalls, and giant sequoias. It's a haven for rock climbers, hikers, and nature lovers, featuring landmarks like El Capitan and Yosemite Falls."
+                },
+                {
+                    "name": "Zion",
+                    "latitude": 37.2982022,
+                    "longitude": -113.0263005,
+                    "wiki_url": "https://en.wikipedia.org/wiki/Zion_National_Park",
+                    "description": "Zion National Park is known for its steep red cliffs, canyons, and Emerald Pools. The park's hiking trails, including The Narrows and Angels Landing, offer both beauty and challenge."
+                }
+            ]
+            
+                parks.forEach(function(park) {
+                    var marker = new google.maps.Marker({
+                        position: {lat: park.latitude, lng: park.longitude},
+                        map: map
+                    });
+            
+                    marker.addListener('click', function() {
+                        var parkNameElement = document.getElementById('park-name');
+                        parkNameElement.innerHTML = '<a href="' + park.wiki_url + '" target="_blank">' + park.name + ' National Park' + '</a>';
+                        document.getElementById('park-description').innerHTML = park.description;;
+                        loadParkImages('Acadia');
+                    });                    
+                });
+            }
+            
+            google.maps.event.addDomListener(window, 'load', initMap); 
+
+            function loadParkImages(parkName) {
+                var imagePath = 'images/travel/' + parkName + '/'; // 图片存储路径
+                var imageCount = 9; // 图片数量
+                var currentIndex = 1; // 当前图片索引，从1开始
+            
+                // 加载第一张图片
+                var imgElement = document.getElementById('park-image');
+                imgElement.src = imagePath + currentIndex + '.jpg';
+            
+                // 轮播逻辑
+                setInterval(function() {
+                    currentIndex = currentIndex % imageCount + 1; // 更新索引
+                    imgElement.src = imagePath + currentIndex + '.jpg'; // 更新图片
+                }, 3000); // 每3秒切换一张图片
+            }                       
+                       
+        </script>
+        <div id="container">
+            <div id="map"></div>
+            <div id="park-info">
+                <h2 id="park-name"></h2>
+                <p id="park-description"></p>
+                <div id="park-images">
+                    <img id="park-image" src="" alt="Park Image" />
+                </div>                
+            </div>
+        </div>
+    </main>
+</body>
