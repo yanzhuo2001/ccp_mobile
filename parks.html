@@ -504,6 +504,8 @@
                 parkNameDiv.textContent = park.name;
                 parkNameDiv.onclick = function() { showParkDetails(park, map); };
                 parksRowContainer.appendChild(parkNameDiv);
+                parkNameDiv.setAttribute('role', 'button');
+                parkNameDiv.setAttribute('aria-label', 'Show' + park.name + '的详情');
                 parkNameDiv.tabIndex = 0;
                 parkNameDiv.onkeypress = function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
