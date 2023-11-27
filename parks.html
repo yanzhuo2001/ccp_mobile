@@ -504,7 +504,8 @@
                 parkNameDiv.textContent = park.name;
                 parkNameDiv.onclick = function() { showParkDetails(park, map); };
                 parksRowContainer.appendChild(parkNameDiv);
-            
+                parkNameDiv.setAttribute('aria-label', 'Show details of' + park.name + ' National Park');
+
                 // 如果索引是10的倍数（除了第一个），则强制换行
                 if (index > 0 && index % 10 === 0) {
                     parksRowContainer.appendChild(document.createElement('br'));
