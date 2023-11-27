@@ -32,6 +32,7 @@
         <script>
             var markers = {}; // 存储所有标记
             var currentSelectedMarker = null; // 用于追踪当前选中的标记
+            var imageSliderInterval = null; // 用于存储图片轮播的定时器
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 5,
@@ -561,17 +562,23 @@
             var imageCount = 9; // 图片数量
             var currentIndex = 1; // 当前图片索引，从1开始
         
+            // 清除之前的轮播定时器
+            if (imageSliderInterval) {
+                clearInterval(imageSliderInterval);
+            }
+        
             // 加载第一张图片
             var imgElement = document.getElementById('park-image');
             imgElement.style.display = 'block'; // 确保图片可见
             imgElement.src = imagePath + currentIndex + '.jpg';
         
-            // 轮播逻辑
-            setInterval(function() {
+            // 设置新的轮播逻辑
+            imageSliderInterval = setInterval(function() {
                 currentIndex = currentIndex % imageCount + 1; // 更新索引
                 imgElement.src = imagePath + currentIndex + '.jpg'; // 更新图片
             }, 3000); // 每3秒切换一张图片
-        }   
+        }
+               
 
         function resetMap(map) {
             // 重置地图到初始状态
