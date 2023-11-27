@@ -158,6 +158,8 @@ h1 {
     border: 1px solid #ddd; /* 边框样式 */
     border-radius: 5px; /* 圆角 */
     cursor: pointer; /* 鼠标悬停时的手形指针 */
+    font-size: medium;
+    height: 15px;
 }
 
 #initial-message {
@@ -170,3 +172,17 @@ h1 {
     font-size: 60px;
     font-family: 'Gloria Hallelujah', cursive;
 }
+
+#reset-button {
+    margin: 5px;
+    padding: 0px;
+    background-color: #e0e0e0; /* 或您选择的背景颜色 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Sriracha", serif; /* 或您选择的字体 */
+    color: blueviolet;
+    font-size: medium;
+    font-weight: bold;
+}
+

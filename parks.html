@@ -251,11 +251,11 @@
                     "description": "Haleakala National Park is centered around a massive volcano. The park's landscapes range from summit deserts to tropical forests, known for breathtaking sunrises and unique wildlife."
                 },
                 {
-                    "name": "Hawai'i Volcanoes",
+                    "name": "Hawaii Volcanoes",
                     "latitude": 19.4290543,
                     "longitude": -155.2568892,
                     "wiki_url": "https://en.wikipedia.org/wiki/Hawai%CA%BBi_Volcanoes_National_Park",
-                    "description": "Hawai'i Volcanoes National Park is famous for its active volcanoes, Kilauea and Mauna Loa. The park offers a unique experience with volcanic landscapes, lush rainforests, and petroglyphs."
+                    "description": "Hawaii Volcanoes National Park is famous for its active volcanoes, Kilauea and Mauna Loa. The park offers a unique experience with volcanic landscapes, lush rainforests, and petroglyphs."
                 },
                 {
                     "name": "Hot Springs",
@@ -509,7 +509,13 @@
                     parksRowContainer.appendChild(document.createElement('br'));
                 }
             });
-            
+                var resetButton = document.createElement('button');
+                resetButton.textContent = '* R E S E T *';
+                resetButton.id = 'reset-button';
+                resetButton.addEventListener('click', function() {
+                    resetMap(map);
+                });
+                parksRowContainer.appendChild(resetButton);
         }
         
         google.maps.event.addDomListener(window, 'load', initMap);
@@ -566,11 +572,38 @@
                 imgElement.src = imagePath + currentIndex + '.jpg'; // 更新图片
             }, 3000); // 每3秒切换一张图片
         }   
+
+        function resetMap(map) {
+            // 重置地图到初始状态
+            map.setCenter({lat: 39.8283, lng: -98.5795});
+            map.setZoom(5);
+        
+            // 将所有标记的颜色变为红色
+            for (var name in markers) {
+                markers[name].setIcon(createMarkerIcon('red'));
+            }
+        
+            // 显示初始消息并隐藏其他信息
+            var initialMessageElement = document.getElementById('initial-message');
+            if (initialMessageElement) {
+                initialMessageElement.style.display = 'block'; // 显示初始消息
+            }
+        
+            var parkNameElement = document.getElementById('park-name');
+            var parkDescriptionElement = document.getElementById('park-description');
+            var parkImagesElement = document.getElementById('park-images');
+        
+            if (parkNameElement) parkNameElement.innerHTML = '';
+            if (parkDescriptionElement) parkDescriptionElement.innerHTML = '';
+            if (parkImagesElement) parkImagesElement.innerHTML = '';
+        }
+        
                        
         </script>
 
         <div id="parks-list">
             <!-- 国家公园名称将在这里动态生成 -->
+            <button id="reset-button"></button>
         </div>
 
         <div id="container">
