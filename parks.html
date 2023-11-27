@@ -504,7 +504,13 @@
                 parkNameDiv.textContent = park.name;
                 parkNameDiv.onclick = function() { showParkDetails(park, map); };
                 parksRowContainer.appendChild(parkNameDiv);
-                parkNameDiv.setAttribute('role', 'button');
+                parkNameDiv.tabIndex = 0;
+                parkNameDiv.onkeypress = function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        showParkDetails(park, map);
+                    }
+                };
+                
 
 
                 // 如果索引是10的倍数（除了第一个），则强制换行
