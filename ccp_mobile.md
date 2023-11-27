@@ -1,1 +1,1 @@
-layout: page title: "ccp_mobile" permalink: /ccp_mobile
+layout: page title: "final_project" permalink: /final_project
