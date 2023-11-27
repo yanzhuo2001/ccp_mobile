@@ -34,7 +34,7 @@ span {
 
 .recipe-container h2 {
     font-family: "Sriracha", serif;
-    color: yellow;
+    color: rgb(94, 94, 4);
     font-size: 40px;
     margin-top: 5px;
     margin-bottom: 0px;
@@ -156,7 +156,7 @@ main {
 
 /* 筛选器按钮样式 */
 #recipe-filter button {
-    background-color: #4CAF50;
+    background-color: #124313;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -171,7 +171,7 @@ main {
 
 /* 鼠标悬停时的按钮样式 */
 #recipe-filter button:hover {
-    background-color: #367c39;
+    background-color: #124313;
     transform: scale(1.1); /* 鼠标悬停时放大 */
 }
 
@@ -215,7 +215,7 @@ main {
 }
 
 .toggle-button {
-    background-color: #4CAF50;
+    background-color: #124313;
     color: white;
     padding: 10px 15px;
     text-align: center;
@@ -226,7 +226,7 @@ main {
 }
 
 .toggle-button:hover {
-    background-color: #367c39;
+    background-color: #124313;
 }
 
 .fixed {
