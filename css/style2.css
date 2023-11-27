@@ -105,7 +105,7 @@ nav a:hover {
 h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 100px;
-    color: yellow;
+    color: rgb(254, 4, 233);
     background-image: url('../images/background/hua.jpg');
     text-align: center;
     margin-top: 0; /* 移除上边距 */
