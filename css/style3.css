@@ -186,3 +186,34 @@ h1 {
     font-weight: bold;
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    nav ul{
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 60px;
+        padding-top: 10px;
+        height: 80px;
+    }
+
+    #initial-message {
+        font-size: 30px;
+    }
+
+    #park-description {
+        font-size: 20px;
+    }
+
+    #park-name {
+        font-size: 30px;
+    }
+}

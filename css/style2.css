@@ -242,3 +242,50 @@ main {
 body.fixed-padding {
     padding-top: 0px;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    nav ul{
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 60px;
+        padding-top: 0px;
+        height: 80px;
+    }
+
+    .recipe-container {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .recipe-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .toggle-button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    #recipe-filter {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #recipe-filter button {
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+
+    /* 其他必要的样式调整 */
+}
