@@ -1,1 +1,1 @@
-The ccp_mobile of course SI 539
+The final project of course SI 539
