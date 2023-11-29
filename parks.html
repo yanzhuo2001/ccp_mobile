@@ -590,20 +590,37 @@
                 markers[name].setIcon(createMarkerIcon('red'));
             }
         
+            // 重置当前选中的标记
+            if (currentSelectedMarker) {
+                currentSelectedMarker = null;
+            }
+        
             // 显示初始消息并隐藏其他信息
             var initialMessageElement = document.getElementById('initial-message');
             if (initialMessageElement) {
-                initialMessageElement.style.display = 'block'; // 显示初始消息
+                initialMessageElement.style.display = 'block';
             }
         
+            // 清除图片轮播定时器
+            if (imageSliderInterval) {
+                clearInterval(imageSliderInterval);
+                imageSliderInterval = null;
+            }
+        
+            // 隐藏并重置图片元素
+            var imgElement = document.getElementById('park-image');
+            if (imgElement) {
+                imgElement.style.display = 'none';
+                imgElement.src = '';
+            }
+        
+            // 清空公园名称和描述
             var parkNameElement = document.getElementById('park-name');
             var parkDescriptionElement = document.getElementById('park-description');
-            var parkImagesElement = document.getElementById('park-images');
-        
             if (parkNameElement) parkNameElement.innerHTML = '';
             if (parkDescriptionElement) parkDescriptionElement.innerHTML = '';
-            if (parkImagesElement) parkImagesElement.innerHTML = '';
         }
+               
         
                        
         </script>
